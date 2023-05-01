@@ -16,9 +16,9 @@
     #     mode: u=rwx,g=rx
     #   become: yes
 
-    - name: make config subdirs
+    - name: make data subdirs
       file:
-        path: '{{ config_dir }}/{{ item }}'
+        path: '{{ data_dir }}/{{ item }}'
         state: directory
         #owner: '472'
         #group: '0'
