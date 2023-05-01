@@ -8,6 +8,27 @@ all:
   vars:
 
     host: pterodactyl.diesel.net
+
+    app_url: https://{{ host }}
+    app_timezone: America/Los_Angeles
+    app_service_author: tom@kiwi-labs.net
+    trusted_proxies: '*'
+
+    mail_from:
+    mail_driver:
+    mail_host:
+    mail_port:
+    mail_username:
+    mail_encryption: True
+
+
+    mysql_password: !vault |
+
+
+    mysql_root_password: !vault |
+
+
+
     
     ansible_user: automation
     ansible_python_interpreter: /usr/bin/python3
