@@ -3,3 +3,5 @@
 # pterodactyl-panel
 
 [pterodactyl.io](https://pterodactyl.io/) Panel on Docker Swarm. Deployed and used in-conjunction with the [Wings](https://github.com/Diesel-Net/pterodactyl-wings) agents.
+
+[Official Docker Image](https://github.com/pterodactyl/panel/pkgs/container/panel)
