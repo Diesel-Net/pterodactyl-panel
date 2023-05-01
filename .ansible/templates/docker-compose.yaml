@@ -16,13 +16,11 @@ services:
     networks:
       - data_net
   
-
   cache:
     image: redis:alpine
     networks:
       - cache_net
 
-  
   panel:
     image: ghcr.io/pterodactyl/panel:latest
     networks:
