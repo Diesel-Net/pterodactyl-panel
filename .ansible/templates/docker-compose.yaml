@@ -41,7 +41,7 @@ services:
     environment:
       APP_URL: "{{ app_url }}"
       APP_TIMEZONE: "{{ app_timezone }}"
-      APP_SERVICE_AUTHOR: "{{ app_service_auther }}"
+      APP_SERVICE_AUTHOR: "{{ app_service_author }}"
       TRUSTED_PROXIES: "{{ trusted_proxies }}" # Set this to your proxy IP
       MAIL_FROM: "{{ mail_from }}"
       MAIL_DRIVER: "{{ mail_driver }}"
