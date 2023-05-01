@@ -3,9 +3,11 @@ all:
 
     swarm_manager:
       hosts:
-        pterodactyl.diesel.net:
+        tools.diesel.net:
 
   vars:
+
+    host: pterodactyl.diesel.net
 
     app_url: https://{{ inventory_hostname }}
     app_timezone: America/Los_Angeles
