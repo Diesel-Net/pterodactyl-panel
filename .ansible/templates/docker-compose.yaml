@@ -22,7 +22,7 @@ services:
       - cache_net
 
   panel:
-    image: ghcr.io/pterodactyl/panel:latest
+    image: ghcr.io/pterodactyl/panel:1.11.3
     networks:
       - {{ traefik_network }}
       - data_net
@@ -35,6 +35,7 @@ services:
         - traefik.http.routers.{{ repository }}.tls.certresolver=step-ca
         - traefik.http.routers.{{ repository }}.service={{ repository }}
     volumes:
+      - "/etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt"
       - "{{ data_dir }}/var/:/app/var/"
       #- "{{ data_dir }}:/etc/nginx/http.d/"
       - "{{ data_dir }}/logs/:/app/storage/logs/"
