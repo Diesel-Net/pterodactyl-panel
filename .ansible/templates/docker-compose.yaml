@@ -40,6 +40,7 @@ services:
       #- "{{ data_dir }}:/etc/nginx/http.d/"
       - "{{ data_dir }}/logs/:/app/storage/logs/"
     environment:
+      GODEBUG: netdns=1
       APP_URL: "{{ app_url }}"
       APP_TIMEZONE: "{{ app_timezone }}"
       APP_SERVICE_AUTHOR: "{{ app_service_author }}"
