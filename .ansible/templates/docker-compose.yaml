@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
 
-
   database:
     image: mariadb:10.5
     command: --default-authentication-plugin=mysql_native_password
@@ -22,7 +21,7 @@ services:
       - cache_net
 
   panel:
-    image: ghcr.io/pterodactyl/panel:latest
+    image: ghcr.io/pterodactyl/panel:v1.11.3
     networks:
       - {{ traefik_network }}
       - data_net
@@ -31,10 +30,11 @@ services:
       labels:
         - traefik.enable=true
         - traefik.http.services.{{ repository }}.loadbalancer.server.port=80
-        - traefik.http.routers.{{ repository }}.rule=Host(`{{ host }}`)
+        - traefik.http.routers.{{ repository }}.rule=Host(`{{ inventory_hostname }}`)
         - traefik.http.routers.{{ repository }}.tls.certresolver=step-ca
         - traefik.http.routers.{{ repository }}.service={{ repository }}
     volumes:
+      - "/etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt"
       - "{{ data_dir }}/var/:/app/var/"
       #- "{{ data_dir }}:/etc/nginx/http.d/"
       - "{{ data_dir }}/logs/:/app/storage/logs/"
