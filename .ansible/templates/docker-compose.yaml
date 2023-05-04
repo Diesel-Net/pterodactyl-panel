@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
 
-
   database:
     image: mariadb:10.5
     command: --default-authentication-plugin=mysql_native_password
@@ -40,7 +39,6 @@ services:
       #- "{{ data_dir }}:/etc/nginx/http.d/"
       - "{{ data_dir }}/logs/:/app/storage/logs/"
     environment:
-      #GODEBUG: netdns=go+2
       APP_URL: "{{ app_url }}"
       APP_TIMEZONE: "{{ app_timezone }}"
       APP_SERVICE_AUTHOR: "{{ app_service_author }}"

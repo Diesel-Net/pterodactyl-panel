@@ -9,21 +9,10 @@
         name: application
         tasks_from: make_data_dir
 
-    # - file:
-    #     path: '{{ data_dir }}'
-    #     owner: '472'
-    #     group: '0'
-    #     mode: u=rwx,g=rx
-    #   become: yes
-
     - name: make data subdirs
       file:
         path: '{{ data_dir }}/{{ item }}'
         state: directory
-        #owner: '472'
-        #group: '0'
-        #mode: u=rwx,g=rx
-      #become: yes
       loop:
         - mysql
         - var
