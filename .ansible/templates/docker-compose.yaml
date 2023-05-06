@@ -30,9 +30,19 @@ services:
       labels:
         - traefik.enable=true
         - traefik.http.services.{{ repository }}.loadbalancer.server.port=80
-        - traefik.http.routers.{{ repository }}.rule=Host(`{{ inventory_hostname }}`)
-        - traefik.http.routers.{{ repository }}.tls.certresolver=step-ca
-        - traefik.http.routers.{{ repository }}.service={{ repository }}
+        
+        # internal (private dns) routing, using step-ca as ACME CA
+        - traefik.http.routers.{{ repository }}-step-ca.rule=Host(`{{ inventory_hostname }}`)
+        - traefik.http.routers.{{ repository }}-step-ca.tls.certresolver=step-ca
+        - traefik.http.routers.{{ repository }}-step-ca.service={{ repository }}
+
+        # internal/external (split/public dns) routing, using Cloudflare as ACME CA
+        - traefik.http.routers.{{ repository }}-cloudflare.rule=Host(`{{ hostname }}`)
+        - traefik.http.routers.{{ repository }}-cloudflare.tls.certresolver=cloudflare
+        - traefik.http.routers.{{ repository }}-cloudflare.tls.domains[0].main={{ domains_main }}
+        - traefik.http.routers.{{ repository }}-cloudflare.tls.domains[0].sans={{ domains_sans }}
+        - traefik.http.routers.{{ repository }}-cloudflare.service={{ repository }}
+
     volumes:
       - "/etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt"
       - "{{ data_dir }}/var/:/app/var/"

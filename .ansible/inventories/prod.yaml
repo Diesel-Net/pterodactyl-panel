@@ -4,10 +4,14 @@ all:
     swarm_manager:
       hosts:
         pterodactyl.diesel.net:
+          hostname: pterodactyl.kiwi-labs.net
+          domains_main: kiwi-labs.net
+          domains_sans: '*.kiwi-labs.net'
+
 
   vars:
 
-    app_url: https://{{ inventory_hostname }}
+    app_url: https://{{ hostname }}
     app_timezone: America/Los_Angeles
     app_service_author: tom@kiwi-labs.net
     trusted_proxies: '*'
