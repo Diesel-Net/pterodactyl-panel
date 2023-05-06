@@ -4,6 +4,8 @@ all:
     swarm_manager:
       hosts:
         pterodactyl.diesel.net:
+          external_hostname: pterodactyl.kiwi-labs.net
+
 
   vars:
 
