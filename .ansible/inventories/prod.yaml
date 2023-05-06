@@ -5,8 +5,8 @@ all:
       hosts:
         pterodactyl.diesel.net:
           hostname: pterodactyl.kiwi-labs.net
-          domains_main: kiwi-labs.net
-          domains_sans: '*.kiwi-labs.net'
+          # domains_main: kiwi-labs.net
+          # domains_sans: '*.kiwi-labs.net'
 
 
   vars:
