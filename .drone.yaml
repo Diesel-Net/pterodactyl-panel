@@ -8,6 +8,11 @@ concurrency:
 steps:
   - name: deploy
     image: docker.nexus.diesel.net/drone-ansible:7.2.0
+    environment:
+      MYSQL_PASSWORD:
+        from_secret: mysql_password
+      MYSQL_ROOT_PASSWORD:
+        from_secret: mysql_root_password
     settings:
       inventory: .ansible/inventories/prod.yaml
       galaxy: .ansible/roles/requirements.yaml
