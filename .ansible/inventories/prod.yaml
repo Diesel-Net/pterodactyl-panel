@@ -16,7 +16,7 @@ all:
           mail_port: 587
           mail_username: "{{ lookup('env', 'SMTP_USERNAME') }}"
           mail_password: "{{ lookup('env', 'SMTP_PASSWORD') }}"
-          mail_encryption: True
+          mail_encryption: tls
 
 
           mysql_password: "{{ lookup('env', 'MYSQL_PASSWORD') }}"
