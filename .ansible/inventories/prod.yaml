@@ -10,12 +10,12 @@ all:
           app_service_author: tom@kiwi-labs.net
           trusted_proxies: '*'
 
-          mail_from: "noreply@example.com"
+          mail_from: "tomdaley92@gmail.com"
           mail_driver: smtp
-          mail_host: mail
-          mail_port: 1025
-          mail_username: ""
-          mail_password: ""
+          mail_host: smtp.gmail.com
+          mail_port: 587
+          mail_username: "{{ lookup('env' 'SMTP_USERNAME') }}"
+          mail_password: "{{ lookup('env', 'SMTP_PASSWORD') }}"
           mail_encryption: True
 
 

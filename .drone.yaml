@@ -13,6 +13,10 @@ steps:
         from_secret: mysql_password
       MYSQL_ROOT_PASSWORD:
         from_secret: mysql_root_password
+      SMTP_USERNAME:
+        from_secret: smtp_username
+      SMTP_PASSWORD:
+        from_secret: smtp_password
     settings:
       inventory: .ansible/inventories/prod.yaml
       galaxy: .ansible/roles/requirements.yaml
