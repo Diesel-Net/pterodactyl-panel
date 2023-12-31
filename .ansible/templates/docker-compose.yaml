@@ -34,7 +34,7 @@ services:
         - traefik.http.services.{{ app_name }}.loadbalancer.server.port=80
         - traefik.http.routers.{{ app_name }}-step-ca.rule=Host(`{{ inventory_hostname }}`, `pterodactyl.kiwi-labs.net`)
         - traefik.http.routers.{{ app_name }}-step-ca.tls.certresolver=step-ca
-        - traefik.http.routers.{{ app_name }}-step-ca.service={{ repository }}
+        - traefik.http.routers.{{ app_name }}-step-ca.service={{ app_name }}
 
     volumes:
       - "/etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt"
