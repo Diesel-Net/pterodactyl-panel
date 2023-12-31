@@ -32,7 +32,7 @@ services:
       labels:
         - traefik.enable=true
         - traefik.http.services.{{ repository }}.loadbalancer.server.port=80
-        - traefik.http.routers.{{ repository }}-step-ca.rule=Host(`{{ inventory_hostname }}`)
+        - traefik.http.routers.{{ repository }}-step-ca.rule=Host(`pterodactyl.kiwi-labs.net`)
         - traefik.http.routers.{{ repository }}-step-ca.tls.certresolver=step-ca
         - traefik.http.routers.{{ repository }}-step-ca.service={{ repository }}
 
