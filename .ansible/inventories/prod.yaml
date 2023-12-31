@@ -5,8 +5,8 @@ all:
       hosts:
         pterodactyl.diesel.net:
 
-          diesel_host: https://pterodactyl.diesel.net
-          kiwi_host: https://pterodactyl.kiwi-labs.net
+          diesel_host: pterodactyl.diesel.net
+          kiwi_host: pterodactyl.kiwi-labs.net
 
           app_url: https://{{ kiwi_host }}
           app_cors_allowed_origins: '*.diesel.net,*.kiwi-labs.net'
