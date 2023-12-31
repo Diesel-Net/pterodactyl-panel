@@ -58,7 +58,7 @@ services:
       MAIL_EHLO_DOMAIN: pterodactyl.kiwi-labs.net
       DB_PASSWORD: '{{ mysql_password }}'
       APP_ENV: "production"
-      APP_ENVIRONMENT_ONLY: "true"
+      APP_ENVIRONMENT_ONLY: "false"
       CACHE_DRIVER: "redis"
       SESSION_DRIVER: "redis"
       QUEUE_DRIVER: "redis"
