@@ -41,6 +41,7 @@ services:
       - "{{ data_dir }}/logs/:/app/storage/logs/"
     environment:
       APP_URL: "{{ app_url }}"
+      APP_CORS_ALLOWED_ORIGINS: "{{ app_cors_allowed_origins }}"
       APP_TIMEZONE: "{{ app_timezone }}"
       APP_SERVICE_AUTHOR: "{{ app_service_author }}"
       TRUSTED_PROXIES: "{{ trusted_proxies }}" # Set this to your proxy IP
