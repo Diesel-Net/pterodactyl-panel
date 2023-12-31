@@ -5,7 +5,7 @@ all:
       hosts:
         pterodactyl.diesel.net:
 
-          app_url: https://pterodactyl.kiwi-labs.net
+          app_url: https://{{ inventory_hostname }}
           app_cors_allowed_origins: '*.diesel.net,*.kiwi-labs.net'
           app_timezone: America/Los_Angeles
           app_service_author: tom@kiwi-labs.net
