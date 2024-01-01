@@ -22,7 +22,7 @@ services:
     networks:
       - cache_net
 
-  panel:
+  webui:
     image: ghcr.io/pterodactyl/panel:v1.11.5
     networks:
       - {{ traefik_network }}
