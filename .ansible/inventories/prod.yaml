@@ -14,7 +14,7 @@ all:
           app_service_author: tom@kiwi-labs.net
           trusted_proxies: '*'
 
-          mail_from: "tomdaley92@gmail.com"
+          mail_from: "{{ lookup('env', 'SMTP_USERNAME') }}"
           mail_driver: smtp
           mail_host: smtp.gmail.com
           mail_port: 587
